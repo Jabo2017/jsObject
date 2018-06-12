@@ -72,7 +72,7 @@ undefined、null、布尔值、字符串、数值、对象、symbol
 		 数组的第一个参数到最后就是调用函数的从第二个参数之后的到最后
 
 
-'__proto__' 与 prototype 的区别
+`__proto__` 与 prototype 的区别
 
 	https://blog.csdn.net/ligang2585116/article/details/53522741
 
