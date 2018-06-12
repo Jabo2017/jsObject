@@ -1,4 +1,4 @@
-1、什么是对象？
+## 1、什么是对象？
   --> 对象可以有自己的私有属性
 
   --> 只要是new 出来的都是对象
@@ -15,13 +15,13 @@
   	  ————生命周期
 
 
-2、
+## 2、
 字面量 -- ：无法挂载私有属性，字面上就能显示
 
 包装类 -- ：没有new的函数声明就是包装类 
 
 
-3、typeof : 类型判断
+## 3、typeof : 类型判断
 
 function、 string、object、symbol、 undefined、boolean、*null
 typeof symbol() //es6 新增
@@ -72,7 +72,7 @@ undefined、null、布尔值、字符串、数值、对象、symbol
 		 数组的第一个参数到最后就是调用函数的从第二个参数之后的到最后
 
 
-__proto__ 与 prototype 的区别
+'__proto__' 与 prototype 的区别
 
 	https://blog.csdn.net/ligang2585116/article/details/53522741
 
