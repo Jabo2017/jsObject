@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+		function a(){
+			console.log(this)
+		}
+		a();
+
+		document.onclick = function(){
+			console.log(this);
+
+			function b(){  //普通函数指向window
+				console.log(this);  
+			}
+			b();
+
+
+			setTimeout(function(){
+				console.log(this);  //window
+			},100)
+
+			//箭头函数
+			setTimeout(()=>{
+				console.log(this);  //#document
+			},100)
+		}
+
+		var json ={
+			a:function(){
+				console.log(this);
+			}
+		}
+		json.a();
+
+		var arr = [1,2,3];
+		arr.b = function(){
+			console.log(this);
+		}
+		arr.b();
+
+	</script>
+</body>
+</html>

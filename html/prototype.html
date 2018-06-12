@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var jsona = function(){}
+		var jsonb = function(){}
+
+		jsona.prototype.a = function(){
+			console.log("a");
+		}
+
+		jsonb.prototype.b = function(){
+			console.log(b)
+		}
+
+		//原型继承【赋值】
+		jsonb.prototype = new jsona();
+
+		console.log(new jsonb().a());
+		console.log(new jsona());
+		console.log(new jsonb());
+
+		////////////////////////////////
+		////////////////////////////////
+
+		function a(){
+			console.log(this);
+		}
+
+		a(); //window
+
+		a.call(1); //Number
+		a.call("b");//String
+
+		function b(x,y,z){
+			console.log(this,x,y,z);
+		}
+
+		b.call(1,2,3,4); //Number {1} 2 3 4
+		b.apply(1,[2,3,4]); //Number {1} 2 3 4
+
+		function p(){
+			this.k = 10;
+			console.log(this)
+		}
+
+		function s(){
+			p.call(this);  //改变p的this指向为s
+		}
+
+		console.log(new s().k);
+
+
+
+	</script>
+</body>
+</html>

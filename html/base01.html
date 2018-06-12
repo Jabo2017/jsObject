@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js 面向对象基础01</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*****************************
+    	对象
+    *****************************/
+    var json = new Object();
+    var json2 = {}; //相当于 new Object 的缩写
+    console.log(json, json2); //两者是一样的
+
+    /////////////////////////////////////////////
+    //扩展：缩写补充 类似
+    var arr = [1, 2, 3];
+    //相当于  var arr = new Array(1,2,3);
+
+    var num = 10;
+    //相当于 var num = new Number(10);
+
+    var str = "xx";   //字面量：无法挂载属性 ，字面上就能显示
+    //相当于 var str = new String("xx"); 
+    var str2 = new String("xx");
+
+     var str3 =String("xx"); //包装类 
+    console.log(str,str2,str3);
+    /////////////////////////////////////////////
+
+    /*****************************
+    	new 对象的赋值
+    *****************************/
+    var json3 = new Object();
+    json3.a = 10;
+    console.log(json3);
+
+    /*****************************
+    	对象相等判断
+    *****************************/
+    var a = 1;
+    var b = 1;
+    console.log(a == b);  //true
+
+    var a1 = new Number(1);
+    var b1 = new Number(1);
+    var c2 = a1; 
+    console.log(a1 == b1);  //false
+    console.log(a1 == c2);  //true
+
+    /*****************************
+    	对象引用机制
+    *****************************/
+    var  a = [1,2,3];
+    var  b = a;
+    b.push(4); 
+    console.log(a);  // [1,2,3,4]
+
+    var a1 = {};
+    var b1 = a1;
+    b1.c = 10;
+    console.log(a1);
+
+    var arr2 = [1,2,3];
+    function show(arr){
+    	//var arr = arr2;  //默认
+    	arr.push(1);
+    };
+    show(arr2);
+    console.log(arr2);
+
+    //不引用
+    var a = [1,2,3];
+    var b = a;
+    b.push(4);
+    console.log(a);
+    a = [2,3];
+    b.push(5);
+    console.log(a);
+    /* 分析：
+		a -> 0x000001   [1,2,3];   
+		b -> 0x000001
+
+		a 重新指向新的地址  -> 0x000002   [2,3];
+    */
+
+
+
+    </script>
+</body>
+
+</html>
